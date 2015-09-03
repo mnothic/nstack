@@ -1,5 +1,5 @@
 BOX_NAME = 'ubuntu/trusty64'
-DEBUG = 'vvvvv'
+DEBUG = 'v'
 require 'rbconfig'
 is_windows = (RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/)
 
