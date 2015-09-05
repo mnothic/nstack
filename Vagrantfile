@@ -1,4 +1,4 @@
-BOX_NAME = 'ubuntu/trusty64'
+BOX_NAME = 'puppetlabs/centos-7.0-64-nocm'
 DEBUG = 'v'
 require 'rbconfig'
 is_windows = (RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/)
