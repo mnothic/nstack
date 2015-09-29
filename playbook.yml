@@ -1,0 +1,9 @@
+---
+# main playbook sast provisioning
+- name: provisioning passnfly architecture
+  hosts: all
+  sudo: true
+
+  roles:
+    - java
+    - jenkins

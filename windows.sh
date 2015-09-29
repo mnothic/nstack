@@ -11,7 +11,6 @@
 
 ANSIBLE_PLAYBOOK=$1
 PLAYBOOK_DIR=${ANSIBLE_PLAYBOOK%/*}
-
 # Detect package management system.
 YUM=$(which yum 2>/dev/null)
 APT_GET=$(which apt-get 2>/dev/null)
@@ -26,10 +25,12 @@ fi
 if ! command -v ansible >/dev/null; then
   echo "Installing Ansible dependencies and Git."
   if [[ ! -z ${YUM} ]]; then
-    yum install -y git python python-devel
+    yum update -y
+    yum remove python-crypto
+    yum install -y git python python-devel wget gmp-devel
   elif [[ ! -z ${APT_GET} ]]; then
     apt-get update
-    apt-get install -y git python python-dev
+    apt-get install -y git python python-dev wget
   else
     echo "Neither yum nor apt-get are available."
     exit 1;
@@ -51,7 +52,7 @@ if ! command -v ansible >/dev/null; then
   fi
 
   echo "Installing required python modules."
-  pip install paramiko pyyaml jinja2 markupsafe
+  pip install paramiko pyyaml jinja2 markupsafe pycrypto
 
   echo "Installing Ansible."
   pip install ansible
