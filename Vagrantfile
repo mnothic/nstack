@@ -1,5 +1,5 @@
 BOX_NAME = 'centos7'
-DEBUG = 'vvvvv'
+DEBUG = 'v'
 require 'rbconfig'
 is_windows = (RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/)
 
@@ -18,8 +18,8 @@ Vagrant.configure('2') do |config|
   if is_windows
     # Provisioning configuration for shell script.
     config.vm.provision "shell" do |sh|
-      sh.path = "windows.sh"
-      sh.args = "playbook.yml"
+      sh.path = 'windows.sh'
+      sh.args = 'playbook.yml'
     end
   else
     config.vm.provision 'ansible' do |ansible|
