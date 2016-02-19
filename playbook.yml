@@ -1,5 +1,5 @@
 ---
-# main playbook sast provisioning
+# main playbook provisioning
 - name: provisioning passnfly architecture
   hosts: all
   sudo: true
