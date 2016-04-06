@@ -1,6 +1,6 @@
 ---
 # main playbook provisioning
-- name: provisioning passnfly architecture
+- name: provisioning engine ci environment jenkins
   hosts: all
   sudo: true
 
